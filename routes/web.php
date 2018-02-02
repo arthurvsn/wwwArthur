@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 Route::get('/laddingpage', 'Homecontroller@laddingPage');
 
-Route::get('/curriculo', function (){
-    echo "Aqui vai estar o meu curriculo.";
-});
+Route::get('/curriculo', 'CurriculosController@index');
 
 Route::get('/sistemaPonto', function (){
     echo "Aqui vai estar o meu sistema de bater ponto e contabilizar horas.";
