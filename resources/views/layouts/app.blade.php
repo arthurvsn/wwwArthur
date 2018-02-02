@@ -28,11 +28,12 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/laddingpage') }}">
                         Home
                     </a>
                     @if (Auth::check())
                         <a class="navbar-brand" href="{{ url('/clientes') }}">Testes</a>
+                        <a class="navbar-brand" href="{{ url('/sistemaPonto') }}">Sistema de Ponto</a>
                     @endif
                 </div>
 

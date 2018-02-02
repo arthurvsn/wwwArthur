@@ -11,13 +11,18 @@
 |
 */
 
-//Route::get('/', 'HomeController@index')->name('home');
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/laddingpage', 'Homecontroller@laddingPage');
+
 Route::get('/curriculo', function (){
-    echo "Aqui vai estar o meu curriculo";
+    echo "Aqui vai estar o meu curriculo.";
+});
+
+Route::get('/sistemaPonto', function (){
+    echo "Aqui vai estar o meu sistema de bater ponto e contabilizar horas.";
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -28,3 +33,8 @@ Route::get('/clientes/novo', 'ClientesController@novoCliente');
 
 //Rotas de autorização
 Auth::routes();
+
+//Gambiarra para o logout funcionar
+Route::get('/logout', function () {
+    return view('welcome');
+});
