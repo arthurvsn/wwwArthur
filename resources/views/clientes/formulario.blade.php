@@ -10,7 +10,7 @@
                    <a class="pull-right" href="{{ url('clientes') }}">Listar Clientes</a>
                 </div>
                 <div class="panel-body">
-                    Meus testes
+                    Novo cliente
                 </div>
             </div>
         </div>

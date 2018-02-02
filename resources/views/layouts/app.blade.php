@@ -29,9 +29,9 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Home
                     </a>
-                    @if (!Auth::guest())
+                    @if (Auth::check())
                         <a class="navbar-brand" href="{{ url('/clientes') }}">Testes</a>
                     @endif
                 </div>
