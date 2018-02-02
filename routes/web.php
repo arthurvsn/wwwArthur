@@ -11,6 +11,20 @@
 |
 */
 
+//Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/curriculo', function (){
+    echo "Aqui vai estar o meu curriculo";
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Rotas para os clientes que fiz teste
+Route::get('/clientes', 'ClientesController@index');
+Route::get('/clientes/novo', 'ClientesController@novoCliente');
+
+//Rotas de autorização
+Auth::routes();

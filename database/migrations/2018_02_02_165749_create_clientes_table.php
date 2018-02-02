@@ -18,6 +18,7 @@ class CreateClientesTable extends Migration
             $table->string('nome', 50);
             $table->text('endereco');
             $table->integer('numero');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
