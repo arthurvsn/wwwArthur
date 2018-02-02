@@ -26,6 +26,9 @@ class HomeController extends Controller
         return view('home');
     }
 
+    /**
+     * Funcao para retornar a pagino de bem vindo do site
+     */
     public function laddingPage()
     {
         return view('welcome');

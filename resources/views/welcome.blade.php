@@ -70,13 +70,23 @@
                 <div class="top-right links">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Sistemas</a>
+                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
                 </div>
             @endif
-
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2" align="center">
+                    Bem vindo ao meu site de aprendizado
+                </di>
+            </div>
             <div class="content">
                 <div class="title m-b-md">
                     Arthurvsn

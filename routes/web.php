@@ -19,7 +19,7 @@ Route::get('/laddingpage', 'Homecontroller@laddingPage');
 
 Route::get('/curriculo', 'CurriculosController@index');
 
-Route::get('/sistemaPonto', function (){
+Route::get('/sistemaponto', function (){
     echo "Aqui vai estar o meu sistema de bater ponto e contabilizar horas.";
 });
 
