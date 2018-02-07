@@ -44,21 +44,22 @@
 			
 			<div class="sectionContent">
 				<article>
-					<h2>Expresso Gardenia</h2>
+					<h2>GDAX</h2>
 					<p class="subDetails">July 2017 - January 2018</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<p>Trainee - PHP Web Developer</p>
+					<p> </p>
 				</article>
 				
 				<article>
 					<h2>PRODEMGE</h2>
 					<p class="subDetails">March 2016 - July 2017</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<p>Trainee - Internal support and PHP Web Developer.</p>
 				</article>
 				
 				<article>
 					<h2>Expresso Gardenia</h2>
 					<p class="subDetails">August 2011 - February 2016</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<p>Fiscal documents conference.</p>
 				</article>
 			</div>
 			<div class="clear"></div>
@@ -95,7 +96,8 @@
 				<article>
 					<h2>PUC MINAS</h2>
 					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+					<p>Beginning in 2014 with expected to graduate in 2018</p>
+					<p>Bachelor in Information Systems.</p>
 				</article>
 			</div>
 			<div class="clear"></div>

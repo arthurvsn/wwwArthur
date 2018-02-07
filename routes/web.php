@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/laddingpage', 'Homecontroller@laddingPage');
+Route::get('/laddingpage', function () {
+    return view('welcome');
+});
 
 Route::get('/curriculo', 'CurriculosController@index');
 
