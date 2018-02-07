@@ -94,11 +94,11 @@
 
                 <div class="links">
                     <a href="{{ url('curriculo') }}">Curriculo</a>
-                    <a href="https://www.linkedin.com/in/arthurvsn" target="_blank">Likedin</a>
                     <a href="https://www.facebook.com/arthurvsn" target="_blank">Facebook</a>
+                    <a href="https://github.com/arthurvsn" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/arthurvsn" target="_blank">Likedin</a>
                     <a href="https://www.twitter.com/arthur_vsn" target="_blank">Twitter</a>
                     <a href="https://www.youtube.com/arthurvsn" target="_blank">YouTube</a>
-                    <a href="https://github.com/arthurvsn" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
