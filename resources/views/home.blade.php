@@ -13,7 +13,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Você está logado
+                    <h5>Bem vindo ao meu site</h5>
+                    <p>Aqui é minha terra, onde coloco todos os meus aprendizados.</p>
+                    <p>Sou desenvolvedor voltado para o back end e aprendendo mais sobre o front end.</p>
+                    <p>Faço as minhas loucuras e sistemas básicos (pois é né, estou aprendendo hehe)</p>
+                    <p>Fique a vontade mas sem avacalhar!<p>
+                    <p>Valeu!!</p>
                 </div>
             </div>
         </div>

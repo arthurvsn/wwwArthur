@@ -33,7 +33,7 @@
                     </a>
                     @if (Auth::check())
                         <a class="navbar-brand" href="{{ url('/clientes') }}">Testes</a>
-                        <a class="navbar-brand" href="{{ url('/sistemaPonto') }}">Sistema de Ponto</a>
+                        <a class="navbar-brand" href="{{ url('/sistemaponto') }}">Sistema de Ponto</a>
                     @endif
                 </div>
 

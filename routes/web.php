@@ -15,13 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/laddingpage', 'Homecontroller@laddingPage');
-
-Route::get('/curriculo', function (){
-    echo "Aqui vai estar o meu curriculo.";
+Route::get('/laddingpage', function () {
+    return view('welcome');
 });
 
-Route::get('/sistemaPonto', function (){
+Route::get('/curriculo', 'CurriculosController@index');
+
+Route::get('/sistemaponto', function (){
     echo "Aqui vai estar o meu sistema de bater ponto e contabilizar horas.";
 });
 

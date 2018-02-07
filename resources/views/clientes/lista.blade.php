@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   Clientes que fiz testes ou outras coisas 
+                   Empresas que fiz testes ou outras coisas 
                     @if (!Auth::guest())
                         <a class="pull-right" href="{{ url('clientes/novo') }}">Novo Cliente</a>
                     @endif

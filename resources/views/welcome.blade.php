@@ -70,13 +70,23 @@
                 <div class="top-right links">
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Sistemas</a>
+                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
                 </div>
             @endif
-
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2" align="center">
+                    Bem vindo ao meu site de aprendizado
+                </di>
+            </div>
             <div class="content">
                 <div class="title m-b-md">
                     Arthurvsn
@@ -84,11 +94,11 @@
 
                 <div class="links">
                     <a href="{{ url('curriculo') }}">Curriculo</a>
-                    <a href="https://www.linkedin.com/in/arthurvsn" target="_blank">Likedin</a>
                     <a href="https://www.facebook.com/arthurvsn" target="_blank">Facebook</a>
+                    <a href="https://github.com/arthurvsn" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/arthurvsn" target="_blank">Likedin</a>
                     <a href="https://www.twitter.com/arthur_vsn" target="_blank">Twitter</a>
                     <a href="https://www.youtube.com/arthurvsn" target="_blank">YouTube</a>
-                    <a href="https://github.com/arthurvsn" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
