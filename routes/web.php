@@ -33,8 +33,5 @@ Route::get('/clientes/novo', 'ClientesController@novoCliente');
 
 //Rotas de autorização
 Auth::routes();
-
 //Gambiarra para o logout funcionar
-Route::get('/logout', function () {
-    return view('welcome');
-});
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
