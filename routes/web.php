@@ -22,7 +22,7 @@ Route::get('/laddingpage', function () {
 Route::get('/curriculo', 'CurriculosController@index');
 
 Route::get('/sistemaponto', function (){
-    echo "Aqui vai estar o meu sistema de bater ponto e contabilizar horas.";
+    return view ('sistemaponto.index');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
