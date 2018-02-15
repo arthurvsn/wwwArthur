@@ -13,6 +13,25 @@
                 </div>
                 <div class="panel-body">
                     Meus testes
+                    <table class="table">
+                        <th>Nome</th>
+                        <th>Endereço</th>
+                        <th>Número</th>
+                        <th>Ações</th>
+                        <tbody>
+                            @foreach($clientes as $cliente)
+                            <tr>
+                                <td>{{ $cliente->nome }}</td>
+                                <td>{{ $cliente->endereco }}</td>
+                                <td>{{ $cliente->numero }}</td>
+                                <td>
+                                    <a href="clientes/{{$cliente->id}}/editar" class="bton btn-sm btn-default">Editar</a>
+                                    <button class="bton btn-sm">Excluir</button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

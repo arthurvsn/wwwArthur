@@ -34,7 +34,12 @@ Route::group(['middleare' => 'web'], function(){
     //Rotas para os clientes que fiz teste
     Route::get('clientes', 'ClientesController@index');
     Route::get('clientes/novo', 'ClientesController@novo');
+    Route::get('clientes/{cliente}/editar', 'ClientesController@editar');
     Route::post('clientes/salvar', 'ClientesController@salvar');
+    Route::post('clientes/{cliente}', 'ClientesController@atualizar');
+    /*Route::post('clientes/{cliente}', function(){
+        return "aaaa";
+    });*/
 
 });
 
