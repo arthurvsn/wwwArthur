@@ -27,11 +27,20 @@ Route::get('/sistemaponto', function (){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Rotas para os clientes que fiz teste
-Route::get('/clientes', 'ClientesController@index');
-Route::get('/clientes/novo', 'ClientesController@novoCliente');
+Route::group(['middleare' => 'web'], function(){
+    Route::get('/', 'HomeController@index');
+    Route::auth();
+
+    //Rotas para os clientes que fiz teste
+    Route::get('clientes', 'ClientesController@index');
+    Route::get('clientes/novo', 'ClientesController@novo');
+    Route::post('clientes/salvar', 'ClientesController@salvar');
+
+});
+
+
 
 //Rotas de autorização
-Auth::routes();
+//Auth::routes();
 //Gambiarra para o logout funcionar
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

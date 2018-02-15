@@ -29,6 +29,9 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/laddingpage') }}">
+                        Inicio
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         Home
                     </a>
                     @if (Auth::check())
