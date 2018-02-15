@@ -37,13 +37,9 @@ Route::group(['middleare' => 'web'], function(){
     Route::get('clientes/{cliente}/editar', 'ClientesController@editar');
     Route::post('clientes/salvar', 'ClientesController@salvar');
     Route::post('clientes/{cliente}', 'ClientesController@atualizar');
-    /*Route::post('clientes/{cliente}', function(){
-        return "aaaa";
-    });*/
+    Route::post('clientes/exluir', 'ClientesController@deletar');
 
 });
-
-
 
 //Rotas de autorização
 //Auth::routes();

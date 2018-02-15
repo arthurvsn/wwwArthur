@@ -26,10 +26,10 @@
                             <input type="text" id="nome" name="nome" class="form-control autofocus" placeholder="Digite o nome do Cliente" value="{{ $cliente->nome }}">
 
                             <label for="endereco">Endereco</label>
-                            <input type="text" id="endereco" name="endereco" class="form-control autofocus" placeholder="Digite o endereco do cliente" value="{{ $cliente->endereco }}">
+                            <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Digite o endereco do cliente" value="{{ $cliente->endereco }}">
 
                             <label for="numero">Numero</label>
-                            <input type="text" id="numero" name="numero" class="form-control autofocus" placeholder="Digite o numero do Cliente" value="{{ $cliente->numero }}">
+                            <input type="text" id="numero" name="numero" class="form-control" placeholder="Digite o numero do Cliente" value="{{ $cliente->numero }}">
 
                             <input type="submit" class="btn btm-primary" value="Salvar">
                         </form>
