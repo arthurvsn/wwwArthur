@@ -15,20 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/laddingpage', function () {
-    return view('welcome');
-});
-
-Route::get('/curriculo', 'CurriculosController@index');
-
 Route::get('/sistemaponto', function (){
     return view ('sistemaponto.index');
+});
+    
+Route::get('/laddingpage', function () {
+    return view('welcome');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleare' => 'web'], function(){
     Route::get('/', 'HomeController@index');
+    Route::get('/curriculo', 'CurriculosController@index');
+    Route::get('editar', 'HomeController@editarUsuario');
+    Route::get('registarnovousuario', 'HomeController@editarUsuario');
+    
     Route::auth();
 
     //Rotas para os clientes que fiz teste
@@ -37,14 +39,7 @@ Route::group(['middleare' => 'web'], function(){
     Route::get('clientes/{cliente}/editar', 'ClientesController@editar');
     Route::post('clientes/salvar', 'ClientesController@salvar');
     Route::post('clientes/{cliente}', 'ClientesController@atualizar');
-    Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar');
-    
-    /* Route::post('clientes/excluir/{cliente}', function($cliente) {
-        echo "ID: ".$cliente;
-    }); */
-    
+    Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar');   
 
+    
 });
-
-//Rotas de autorização
-//Auth::routes();
