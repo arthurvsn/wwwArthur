@@ -46,10 +46,10 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="{{ url('/clientes') }}">Testes para outras empresas</a>
+                                    <a href="{{ url('/clientes') }}">Testes para outras empresas</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="{{ url('/sistemaponto') }}">Sistema de Ponto</a>
+                                    <a href="{{ url('/sistemaponto') }}">Sistema de Ponto</a>
                                 </li>
                             </ul>
                         </li>

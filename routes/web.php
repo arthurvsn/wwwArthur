@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sistemaponto', function (){
+Route::get('sistemaponto', function (){
     return view ('sistemaponto.index');
 });
     
@@ -39,7 +39,5 @@ Route::group(['middleare' => 'web'], function(){
     Route::get('clientes/{cliente}/editar', 'ClientesController@editar');
     Route::post('clientes/salvar', 'ClientesController@salvar');
     Route::post('clientes/{cliente}', 'ClientesController@atualizar');
-    Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar');   
-
-    
+    Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar'); 
 });
