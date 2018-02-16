@@ -29,6 +29,9 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/laddingpage') }}">
+                        Inicio
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         Home
                     </a>
                     @if (Auth::check())
@@ -56,6 +59,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ route('register') }}">Register</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Logout

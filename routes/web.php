@@ -22,16 +22,29 @@ Route::get('/laddingpage', function () {
 Route::get('/curriculo', 'CurriculosController@index');
 
 Route::get('/sistemaponto', function (){
-    echo "Aqui vai estar o meu sistema de bater ponto e contabilizar horas.";
+    return view ('sistemaponto.index');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Rotas para os clientes que fiz teste
-Route::get('/clientes', 'ClientesController@index');
-Route::get('/clientes/novo', 'ClientesController@novoCliente');
+Route::group(['middleare' => 'web'], function(){
+    Route::get('/', 'HomeController@index');
+    Route::auth();
+
+    //Rotas para os clientes que fiz teste
+    Route::get('clientes', 'ClientesController@index');
+    Route::get('clientes/novo', 'ClientesController@novo');
+    Route::get('clientes/{cliente}/editar', 'ClientesController@editar');
+    Route::post('clientes/salvar', 'ClientesController@salvar');
+    Route::post('clientes/{cliente}', 'ClientesController@atualizar');
+    Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar');
+    
+    /* Route::post('clientes/excluir/{cliente}', function($cliente) {
+        echo "ID: ".$cliente;
+    }); */
+    
+
+});
 
 //Rotas de autorização
-Auth::routes();
-//Gambiarra para o logout funcionar
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+//Auth::routes();
