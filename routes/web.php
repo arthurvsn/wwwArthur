@@ -37,7 +37,12 @@ Route::group(['middleare' => 'web'], function(){
     Route::get('clientes/{cliente}/editar', 'ClientesController@editar');
     Route::post('clientes/salvar', 'ClientesController@salvar');
     Route::post('clientes/{cliente}', 'ClientesController@atualizar');
-    Route::post('clientes/exluir', 'ClientesController@deletar');
+    Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar');
+    
+    /* Route::post('clientes/excluir/{cliente}', function($cliente) {
+        echo "ID: ".$cliente;
+    }); */
+    
 
 });
 

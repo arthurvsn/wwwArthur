@@ -29,8 +29,7 @@
                                 <td>{{ $cliente->numero }}</td>
                                 <td>
                                     <a href="clientes/{{$cliente->id}}/editar" style="display: inline" class="btn btn-sm btn-default">Editar</a>
-                                    <form method="POST" style="display: inline" action="{{ url('clientes/'.$cliente->id) }}">
-                                        <input type="hidden" name="_method" value="DELETE">
+                                    <form method="post" style="display: inline" action="{{ url('clientes/excluir/'.$cliente->id) }}">
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-sm btn-default">Deletar</button>
                                     </form>
