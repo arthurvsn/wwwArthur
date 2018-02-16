@@ -43,5 +43,3 @@ Route::group(['middleare' => 'web'], function(){
 
 //Rotas de autorização
 //Auth::routes();
-//Gambiarra para o logout funcionar
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
