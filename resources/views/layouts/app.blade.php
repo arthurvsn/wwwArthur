@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Arthurvsn') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,23 +28,33 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/laddingpage') }}">
-                        Inicio
-                    </a>
                     <a class="navbar-brand" href="{{ url('/home') }}">
                         Home
                     </a>
-                    @if (Auth::check())
-                        <a class="navbar-brand" href="{{ url('/clientes') }}">Testes</a>
-                        <a class="navbar-brand" href="{{ url('/sistemaponto') }}">Sistema de Ponto</a>
-                    @endif
+                    <a class="navbar-brand" href="{{ url('/laddingpage') }}">
+                        Sobre Mim
+                    </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
+                    @if (Auth::check())
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Sistemas <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ url('/clientes') }}">Testes para outras empresas</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/sistemaponto') }}">Sistema de Ponto</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -59,7 +69,8 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{ route('register') }}">Register</a></li>
+                                    <li><a href="{{ url('/editar') }}">Edit Profile</a></li>
+                                    <li><a href="{{ url('/registarnovousuario') }}">Register</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Logout

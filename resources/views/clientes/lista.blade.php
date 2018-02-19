@@ -14,7 +14,7 @@
                 <div class="panel-body">
                     Meus testes
                     @if(Session::has('mensagem_sucesso'))
-                        <div class="alert alert-sucess">{{ Session::get('mensagem_sucesso') }}</div>
+                        <div class="alert alert-success">{{ Session::get('mensagem_sucesso') }}</div>
                     @endif
                     <table class="table">
                         <th>Nome</th>
@@ -28,10 +28,10 @@
                                 <td>{{ $cliente->endereco }}</td>
                                 <td>{{ $cliente->numero }}</td>
                                 <td>
-                                    <a href="clientes/{{$cliente->id}}/editar" style="display: inline" class="btn btn-sm btn-default">Editar</a>
+                                    <a href="clientes/{{$cliente->id}}/editar" style="display: inline"><button class="btn btn-sm btn-default">Editar</button> </a>
                                     <form method="post" style="display: inline" action="{{ url('clientes/excluir/'.$cliente->id) }}">
                                         {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-sm btn-default">Deletar</button>
+                                        <button type="submit" class="btn btn-sm btn-danger">Deletar</button>
                                     </form>
                                 </td>
                             </tr>

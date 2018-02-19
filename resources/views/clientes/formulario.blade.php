@@ -11,7 +11,7 @@
                 </div>
                 <div class="panel-body">
                     @if(Session::has('mensagem_sucesso'))
-                        <div class="alert alert-sucess">{{ Session::get('mensagem_sucesso') }}</div>
+                        <div class="alert alert-success">{{ Session::get('mensagem_sucesso') }}</div>
                     @endif
 
                     @if(Request::is('*/editar'))                        

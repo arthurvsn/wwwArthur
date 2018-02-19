@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Auth::check())
+        {
+            return view('home');
+        }
+        else 
+        {
+            return view('login');
+        }
     }
 
     /**
@@ -33,5 +42,14 @@ class HomeController extends Controller
     public function laddingPage()
     {
         return view('welcome');
+    }
+
+    public function editarUsuario()
+    {
+        echo "Nothing Working, wait a momemt, please";die();
+        $idusuario = Auth::user()->id;
+
+        $usuario = User::findOrFail($idusuario);
+        return view('auth.register');
     }
 }
