@@ -1,16 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.sistemaponto')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                   Em desenvolvimento, tente mais tarde!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+<h2>Collapsible Sidebar Using Bootstrap 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 @endsection
