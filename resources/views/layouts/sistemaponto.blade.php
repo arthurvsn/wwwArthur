@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Collapsible sidebar using Bootstrap 3</title>
+        <title>Sistema de Ponto</title>
 
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,9 +13,6 @@
         <link href="{{ asset('css/sistemaponto.css') }}" rel="stylesheet">
     </head>
     <body>
-
-
-
         <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
@@ -28,12 +25,12 @@
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="{{ url('/home') }}">Home</a></li>
+                            <li><a href="{{ url('home') }}">Home</a></li>
                             <li><a href="{{ url('laddingpage') }}">Sobre Mim</a></li>
                             @if (!Auth::guest())
                                 <li>
                                     <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            Logout
+                                        Logout
                                     </a>
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
@@ -43,7 +40,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Gestão</a>
+                        <a href="#gestaoSubmenu" data-toggle="collapse" aria-expanded="false">Gestão</a>
+                        <ul class="collapse list-unstyled" id="gestaoSubmenu">
+                            <li><a href="{{ url('gestao-ponto') }}">Ativos</a></li>
+                            <li><a href="{{ url('opcoes-ponto') }}">Opções Ponto</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#">Registar Ponto</a>
@@ -69,9 +70,8 @@
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Gestão</a></li>
-                                <li><a href="#">Registrar Ponto</a></li>
+                                <li><a href="{{ url('/sistemaponto') }}">Home</a></li>
+                                <li><a href="{{ url('/editar') }}">Meu Perfil</a></li>
                                 @if (!Auth::guest())
                                     <li>
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

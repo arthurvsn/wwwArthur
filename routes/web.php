@@ -40,4 +40,7 @@ Route::group(['middleare' => 'web'], function(){
     Route::post('clientes/salvar', 'ClientesController@salvar');
     Route::post('clientes/{cliente}', 'ClientesController@atualizar');
     Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar'); 
+
+    //Rotas Para o sistema de ponto
+    Route::get('opcoes-ponto', 'OpcoesPontoController@index');
 });
