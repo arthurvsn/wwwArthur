@@ -6,6 +6,8 @@ use App\RegistroPonto;
 use Illuminate\Http\Request;
 use DateTime;
 use App\OpcaoPonto;
+use Auth;
+use App\User;
 
 class RegistroPontoController extends Controller
 {
@@ -22,7 +24,13 @@ class RegistroPontoController extends Controller
         $dataAtual = $objetoDataAtual->format('d/m/Y');
         $horaAtual = $objetoDataAtual->format('H:i:s');
         $opcoesPonto = OpcaoPonto::get();
-        return view('sistemaponto.registrarponto.formulario', ['hora' => $horaAtual, 'data' => $dataAtual, 'opcoesPonto' => $opcoesPonto]);
+        $usuario = Auth::user()->id;
+        return view('sistemaponto.registrarponto.formulario', 
+                        ['hora' => $horaAtual, 
+                         'data' => $dataAtual, 
+                         'opcoesPonto' => $opcoesPonto, 
+                          'usuario' => $usuario
+                    ]);
     }
 
     /**

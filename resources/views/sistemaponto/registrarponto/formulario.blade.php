@@ -47,6 +47,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <input type="submit" class="btn btm-primary" value="Registrar Ponto">
+                                    <input type="hidden" id="id_usuario" name="id_usuario" value="{{ $usuario }}">
                                 </div>
                             </div>
                         </form>
