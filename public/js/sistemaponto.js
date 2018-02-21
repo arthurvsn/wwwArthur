@@ -5,3 +5,8 @@ $(document).ready(function () {
     });
 
 });
+
+function validaFormOpcoesPonto(form)
+{
+    return false;
+}

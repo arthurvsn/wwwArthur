@@ -47,7 +47,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Registar Ponto</a>
+                        <a href="{{ url('registro-ponto') }}">Registar Ponto</a>
                     </li>
                     <li>
                         <a href="#">Relatorios</a>

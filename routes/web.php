@@ -43,4 +43,7 @@ Route::group(['middleare' => 'web'], function(){
 
     //Rotas Para o sistema de ponto
     Route::get('opcoes-ponto', 'OpcoesPontoController@index');
+    Route::post('opcoes-ponto/salvar', 'OpcoesPontoController@save');
+
+    Route::get('registro-ponto', 'RegistroPontoController@index');
 });
