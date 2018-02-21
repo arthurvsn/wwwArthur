@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\RegistroPonto;
 use Illuminate\Http\Request;
 use DateTime;
+use App\OpcaoPonto;
 
 class RegistroPontoController extends Controller
 {
@@ -20,7 +21,8 @@ class RegistroPontoController extends Controller
         $objetoDataAtual = new DateTime('NOW');
         $dataAtual = $objetoDataAtual->format('d/m/Y');
         $horaAtual = $objetoDataAtual->format('H:i:s');
-        return view('sistemaponto.registrarponto.formulario', ['hora' => $horaAtual, 'data' => $dataAtual]);
+        $opcoesPonto = OpcaoPonto::get();
+        return view('sistemaponto.registrarponto.formulario', ['hora' => $horaAtual, 'data' => $dataAtual, 'opcoesPonto' => $opcoesPonto]);
     }
 
     /**

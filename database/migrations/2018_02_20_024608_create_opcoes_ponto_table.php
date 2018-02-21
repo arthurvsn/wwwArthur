@@ -13,8 +13,8 @@ class CreateOpcoesPontoTable extends Migration
      */
     public function up()
     {
-        Schema::create('opcoes-ponto', function (Blueprint $table) {
-            $table->increments('id-opcoes-ponto');
+        Schema::create('opcao_pontos', function (Blueprint $table) {
+            $table->increments('id_opcoes_ponto');
             $table->string('nome', 25);
             $table->enum('status', ['A', 'I'])->default("A");
             $table->rememberToken();
@@ -29,6 +29,6 @@ class CreateOpcoesPontoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opcoes-ponto');
+        Schema::dropIfExists('opcoes_pontos');
     }
 }
