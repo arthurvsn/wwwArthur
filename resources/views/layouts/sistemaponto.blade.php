@@ -22,7 +22,7 @@
 
                 <ul class="list-unstyled components">
                     <p>Opções</p>
-                    <li class="active">
+                    <li>
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li><a href="{{ url('home') }}">Home</a></li>
@@ -57,37 +57,38 @@
 
             <!-- Page Content Holder -->
             <div id="content">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
 
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                    <i class="glyphicon glyphicon-align-left"></i>
+                                    <span>Menu</span>
+                                </button>
+                            </div>
 
-                        <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Menu</span>
-                            </button>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="{{ url('/sistemaponto') }}">Home</a></li>
+                                    <li><a href="{{ url('/editar') }}">Meu Perfil</a></li>
+                                    @if (!Auth::guest())
+                                        <li>
+                                            <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    Logout
+                                            </a>
+                                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
                         </div>
+                    </nav>
 
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="{{ url('/sistemaponto') }}">Home</a></li>
-                                <li><a href="{{ url('/editar') }}">Meu Perfil</a></li>
-                                @if (!Auth::guest())
-                                    <li>
-                                        <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                Logout
-                                        </a>
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                @endif
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-                @yield('content')
+                    @yield('content')
+                </div>
             </div>
         </div>
 
