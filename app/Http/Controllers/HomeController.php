@@ -46,10 +46,10 @@ class HomeController extends Controller
 
     public function editarUsuario()
     {
-        echo "Nothing Working, wait a momemt, please";die();
+        
         $idusuario = Auth::user()->id;
 
         $usuario = User::findOrFail($idusuario);
-        return view('auth.register');
+        return view('auth.register', ['usuario' => $usuario]);
     }
 }

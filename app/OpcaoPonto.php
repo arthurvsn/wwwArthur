@@ -16,24 +16,20 @@ class OpcaoPonto extends Model
 
     public function getOpcaoPontoById($id)
     {
-        $sql = "SELECT op.nome,
-                       op.id_opcao_pontos,
-                       op.status
-                  FROM opcao_pontos op
-                 WHERE op.id_opcao_pontos = {$id}";
-        
-        $opcoesPonto = DB::select($sql);
+        $opcoesPonto = DB::table('opcoes_pontos')
+            ->where('id_opcao_pontos', '=', $id)
+            ->get();
+
         return $opcoesPonto;
     }
 
     public function getOpcoesByStatus($status = "A")
     {
-        $sql = "SELECT op.nome,
-                       op.id_opcao_pontos
-                  FROM opcao_pontos op
-                 WHERE op.status = '{$status}'";
-        
-        $opcoesPonto = DB::select($sql);
+        $opcoesPonto = DB::table('opcao_pontos')
+            ->select('id_opcao_pontos', 'nome')
+            ->where('status', '=', $status)
+            ->get();
+
         return $opcoesPonto;
     }
 }

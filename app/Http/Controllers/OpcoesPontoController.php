@@ -20,7 +20,7 @@ class OpcoesPontoController extends Controller
         $opcaoPonto = new OpcaoPonto();
 
         $salvarOpcaoPonto = $opcaoPonto->create($request->all());
-        \Session::flash('mensagem_sucesso', "Cliente cadastrado com sucesso!");
+        \Session::flash('mensagem_sucesso', "Tipo de ponto cadastrado com sucesso!");
         return Redirect::to('opcoes-ponto');
     }
 
@@ -38,5 +38,28 @@ class OpcoesPontoController extends Controller
 
         
         return view('sistemaponto.opcoes-ponto.formulario', ['opcaoPonto' => $opcaoPonto, 'opcoes' => $opcoes]);
+    }
+
+    /**
+     * 
+     */
+    public function update($id, Request $request)
+    {
+        try
+        {
+            
+            $opcaoPonto = OpcaoPonto::findOrFail($id);
+    
+            $opcaoPonto->update($request->all());
+    
+            \Session::flash('mensagem_sucesso', "Opção ponto atualizado com sucesso!");
+            return Redirect::to("opcoes-ponto/".$id."/editar");
+
+        }
+        catch (Exeception $e)
+        {
+            \Session::flash('mensagem_erro', $e->getMessage());
+            return Redirect::to("opcoes-ponto/".$id."/editar");
+        }
     }
 }

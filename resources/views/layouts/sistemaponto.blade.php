@@ -57,7 +57,7 @@
 
             <!-- Page Content Holder -->
             <div id="content">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <nav class="navbar navbar-default">
                         <div class="container-fluid">
 
