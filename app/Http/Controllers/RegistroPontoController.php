@@ -74,7 +74,7 @@ class RegistroPontoController extends Controller
             \Session::flash('mensagem_sucesso', "Ponto registrado com sucesso!");
             return Redirect::to('registro-ponto');
         }
-        catch(Exeception $e)
+        catch(Exception $e)
         {
             \Session::flash('mensagem_error', $e->getMessage());
             return Redirect::to('registro-ponto');            
