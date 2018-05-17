@@ -19,16 +19,19 @@
                     @else
                         <form method="post" action="{{ url('clientes/salvar') }}">
                     @endif
-                            <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}">
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" class="form-control autofocus" placeholder="Digite o nome do Cliente" value="{{ $cliente->nome or null }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="endereco">Endereco</label>
+                                <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Digite o endereco do cliente" value="{{ $cliente->endereco or null }}">
 
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control autofocus" placeholder="Digite o nome do Cliente" value="{{ $cliente->nome or null }}">
-
-                            <label for="endereco">Endereco</label>
-                            <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Digite o endereco do cliente" value="{{ $cliente->endereco or null }}">
-
-                            <label for="numero">Numero</label>
-                            <input type="text" id="numero" name="numero" class="form-control" placeholder="Digite o numero do Cliente" value="{{ $cliente->numero or null }}">
+                            <div class="form-group">
+                                <label for="numero">Numero</label>
+                                <input type="text" id="numero" name="numero" class="form-control" placeholder="Digite o numero do Cliente" value="{{ $cliente->numero or null }}">
+                            </div>
 
                             <input type="submit" class="btn btm-primary" value="Salvar">
                         </form>

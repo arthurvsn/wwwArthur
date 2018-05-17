@@ -25,7 +25,7 @@ Route::get('/laddingpage', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleare' => 'web'], function(){
+Route::group(['middleware' => 'web'], function(){
     Route::get('/', 'HomeController@index');
     Route::get('/curriculo', 'CurriculosController@index');
     Route::get('editar', 'HomeController@editarUsuario');
@@ -40,4 +40,13 @@ Route::group(['middleare' => 'web'], function(){
     Route::post('clientes/salvar', 'ClientesController@salvar');
     Route::post('clientes/{cliente}', 'ClientesController@atualizar');
     Route::post('clientes/excluir/{cliente}', 'ClientesController@deletar'); 
+
+    //Rotas Para o sistema de ponto
+    Route::get('opcoes-ponto', 'OpcoesPontoController@index');
+    Route::get('opcoes-ponto/{id}/editar', 'OpcoesPontoController@editar');
+    Route::post('opcoes-ponto/{id}/update', 'OpcoesPontoController@update');
+    Route::post('opcoes-ponto/salvar', 'OpcoesPontoController@save');
+
+    Route::get('registro-ponto', 'RegistroPontoController@index');
+    Route::post('registro-ponto', 'RegistroPontoController@store');
 });
