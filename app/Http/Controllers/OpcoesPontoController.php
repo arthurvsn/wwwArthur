@@ -56,7 +56,7 @@ class OpcoesPontoController extends Controller
             return Redirect::to("opcoes-ponto/".$id."/editar");
 
         }
-        catch (Exeception $e)
+        catch (Exception  $e)
         {
             \Session::flash('mensagem_erro', $e->getMessage());
             return Redirect::to("opcoes-ponto/".$id."/editar");
