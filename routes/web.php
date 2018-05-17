@@ -48,4 +48,5 @@ Route::group(['middleware' => 'web'], function(){
     Route::post('opcoes-ponto/salvar', 'OpcoesPontoController@save');
 
     Route::get('registro-ponto', 'RegistroPontoController@index');
+    Route::post('registro-ponto', 'RegistroPontoController@store');
 });

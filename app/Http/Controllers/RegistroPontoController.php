@@ -8,7 +8,8 @@ use DateTime;
 use App\OpcaoPonto;
 use Auth;
 use App\User;
-use Illuminate\Support\Facades\DB;
+use Redirect;
+use \App\Util\Util;
 
 class RegistroPontoController extends Controller
 {
@@ -56,7 +57,28 @@ class RegistroPontoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try
+        {
+            $registroPonto  = new RegistroPonto();
+            $usuario        = Auth::user()->id;
+            $dataPonto      = Util::formataData2Db($request->get('data_ponto'));
+
+            $registroPonto->create([
+                'data_ponto'            => $dataPonto,
+                'hora_ponto'            => $request->get('hora_ponto'),
+                'id_tipo_opcao_ponto'   => $request->get('id_tipo_opcao_ponto'),
+                'id_usuario'            => $usuario,
+                'remember_token'        => $request->get('_token'),
+            ]);
+
+            \Session::flash('mensagem_sucesso', "Ponto registrado com sucesso!");
+            return Redirect::to('registro-ponto');
+        }
+        catch(Exeception $e)
+        {
+            \Session::flash('mensagem_error', $e->getMessage());
+            return Redirect::to('registro-ponto');            
+        }
     }
 
     /**

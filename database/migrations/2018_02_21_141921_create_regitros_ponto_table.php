@@ -13,7 +13,7 @@ class CreateRegitrosPontoTable extends Migration
      */
     public function up()
     {
-        Schema::create('registros_ponto', function (Blueprint $table) {
+        Schema::create('registro_pontos', function (Blueprint $table) {
             $table->increments('id_registros_ponto');
             $table->date('data_ponto');
             $table->time('hora_ponto');

@@ -11,8 +11,10 @@
                 <div class="panel-body">
                     @if(Session::has('mensagem_sucesso'))
                         <div class="alert alert-success">{{ Session::get('mensagem_sucesso') }}</div>
+                    @else
+                        <div class="alert alert-error">{{ Session::get('mensagem_error') }}</div>
                     @endif
-                    <form class="form-horizontal" method="post" action="#">
+                    <form class="form-horizontal" method="post" action="{{ url('registro-ponto') }}">
                         <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="nome">Data:</label>
