@@ -31,12 +31,13 @@ class RegistroPontoController extends Controller
         
         $usuario = Auth::user()->id;
         
-        return view('sistemaponto.registrarponto.formulario', 
-                        ['hora' => $horaAtual, 
-                         'data' => $dataAtual, 
-                         'opcoesPonto' => $opcoesPonto, 
-                          'usuario' => $usuario
-                    ]);
+        return view('sistemaponto.registrarponto.formulario', [
+                        'hora' => $horaAtual, 
+                        'data' => $dataAtual, 
+                        'opcoesPonto' => $opcoesPonto, 
+                        'usuario' => $usuario
+                    ]
+                );
     }
 
     /**

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\User;
+use App\RegistroPonto;
+use Redirect;
 
 class RelatorioPontoController extends Controller
 {
@@ -13,7 +17,19 @@ class RelatorioPontoController extends Controller
      */
     public function index()
     {
-        return view('sistemaponto.relatorioponto.relatorio');
+        $usuario = Auth::user();
+
+        if(!$usuario)
+        {
+            return Redirect::to('login');            
+        }
+
+        $registroPonto = new RegistroPonto();
+        $dados = $registroPonto->getRelatorio($usuario->id);
+
+        return view('sistemaponto.relatorioponto.relatorio', [
+            'dados' => $dados
+        ]);
     }
 
     /**
