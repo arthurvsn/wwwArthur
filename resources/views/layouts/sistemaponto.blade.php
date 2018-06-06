@@ -50,7 +50,7 @@
                         <a href="{{ url('registro-ponto') }}">Registar Ponto</a>
                     </li>
                     <li>
-                        <a href="#">Relatorios</a>
+                        <a href="{{ url('relatorio') }}">Relatorios</a>
                     </li>
                 </ul>
             </nav>

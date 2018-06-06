@@ -49,4 +49,7 @@ Route::group(['middleware' => 'web'], function(){
 
     Route::get('registro-ponto', 'RegistroPontoController@index');
     Route::post('registro-ponto', 'RegistroPontoController@store');
+
+    //Rotas de relatorio
+    Route::get('relatorio', 'RelatorioPontoController@index');
 });
